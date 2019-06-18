@@ -25,7 +25,7 @@ class LoginScreen extends Base {
      * Find the accessibility id of the error message
      * the ~ is telling WebdriverIO that you are going to use the accessibility id's
      */
-    return $('~');
+    return $('~test-Error message');
   }
 
   /**

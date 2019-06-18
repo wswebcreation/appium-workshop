@@ -37,7 +37,7 @@ describe('Login', () => {
    * To make it easy for you all I already created the first test case,
    * make sure you remove the `x` in front of each `xit` so the test case will be executed
    */
-  xit('should not be able to login with a locked user', () => {
+  it('should not be able to login with a locked user', () => {
     expect(LoginScreen.isErrorMessageIsShown()).toEqual(false);
 
     LoginScreen.signIn(LOGIN_USERS.LOCKED);
@@ -48,15 +48,37 @@ describe('Login', () => {
     );
   });
 
-  xit('should show an error when no username is provided', () => {
+  it('should show an error when no username is provided', () => {
     // Add test code here
+
+    expect(LoginScreen.isErrorMessageIsShown()).toEqual(false);
+
+    LoginScreen.signIn(LOGIN_USERS.NO_USER_DETAILS);
+
+    expect(LoginScreen.getErrorMessage()).toContain('Username is required', 'The error message is not as expected');
   });
 
-  xit('should show an error when no password is provided', () => {
+  it('should show an error when no password is provided', () => {
     // Add test code here
+
+    expect(LoginScreen.isErrorMessageIsShown()).toEqual(false);
+
+    LoginScreen.signIn(LOGIN_USERS.NO_PASSWORD);
+
+    expect(LoginScreen.getErrorMessage()).toContain('Password is required', 'The error message is not as expected');
   });
 
-  xit('should show an error when no match is found', () => {
+  it('should show an error when no match is found', () => {
     // Add test code here
+
+    expect(LoginScreen.isErrorMessageIsShown()).toEqual(false);
+
+    LoginScreen.signIn(LOGIN_USERS.NO_MATCH);
+
+    expect(LoginScreen.getErrorMessage()).toContain(
+      'Username and password do not match any user in this service.',
+      'The error message is not as expected',
+    );
+
   });
 });
