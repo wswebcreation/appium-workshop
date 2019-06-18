@@ -11,6 +11,9 @@ If you want you can cheat, to be honest I don't mind, but you might need to ask 
 - [Installing this project](#installing-this-project)
   - [Check if all works](#check-if-all-works)
   - [Exercises](#exercises)
+    - [Exercise-1](#exercise-1)
+    - [Exercise-2](#exercise-2)
+    - [Exercise-3](#exercise-3)
 
 
 ## Requirements for the workshop
@@ -96,3 +99,95 @@ The master branch already holds the first exercise, which can be found [here](./
 All other exercises can be found in branches called `exercise-#`, the `#` is the number of the exercise. Check the note at the beginning of this document!
 
 The goal of each exercise and the steps you need to take can be found in the exercise documents.
+
+#### Exercise-1
+**Goal:<br>**
+- You will learn how to find elements and their selectors with Appium-Desktop based on accessibilityID's
+
+**Objectives:**
+- Create multiple test cases based on an example
+- Verify that the error message is not and is shown
+
+**Part 1: Find the error message selector<br>**
+Use Appium Desktop to find the accessibilityID of the error message and add that to [`tests/screen-objects/login.js`](./tests/screen-objects/login.js). 
+(*The `~` is telling WebdriverIO that you are going to use the accessibilityID's*)
+
+**Part 2: Create multiple test cases<br>**
+See [`tests/specs/login.spec.js`](./tests/specs/login.spec.js) for the tests that need to be created. 
+Verify for each test that the error message is not there and later is shown.
+
+#### Exercise-2
+**Goal:<br>**
+- You know **when** to use XPATH
+
+**Objectives:**
+- Add swag to the cart based on it's text
+- Verify the swag was added to the cart
+
+**Part 1: Select the right branch<br>**
+Check out the branch `exercise-2` with:
+
+  `git checkout exercise-2`
+
+> *or go to GitHub and select branch [`exercise-2`](https://github.com/wswebcreation/appium-workshop/tree/exercise-2)*
+
+You will find:
+- answers for exercise 1
+- the new exercises for `exercise-2`
+
+**Part 2: Find the `Add to cart` button<br>**
+Open Appium Desktop and try to find:
+ 1. the text element for the first swag item
+ 2. the add button for the first swag item
+ 
+See [`tests/screen-objects/inventoryList.js`](tests/screen-objects/swagList.js) for what to do (only visible when you did a checkout of branch `exercise-2`).
+Also write the first part of the test case in [`tests/specs/swag.overview.spec.js`](./tests/specs/swag.overview.spec.js).
+ 
+> Hint: Try to come up with a XPATH selector that uses the text of the first swag item and returns the `Add to cart` button
+
+**Part 3: Find the `cart item` amount<br>**
+1. Find the cart-icon
+2. find a way to get the text
+
+Now write the second part of the test case in [`tests/specs/swag.overview.spec.js`](./tests/specs/swag.overview.spec.js) and run the test.
+
+#### Exercise-3
+**Goal:<br>**
+- You know how to inspect a webview
+
+**Objectives:<br>**
+- Switch to the Webview during a test
+- Access elements in the Webview during the test
+
+**Part 1: Select the right branch<br>**
+Check out the branch `exercise-3` with:
+
+  `git checkout exercise-3`
+
+> *or go to GitHub and select branch [`exercise-3`](https://github.com/wswebcreation/appium-workshop/tree/exercise-3)*
+
+You will find:
+- answers for exercise 2
+- the new exercises for `exercise-3`
+
+**Part 2: Inspecting elements with Chrome browser<br>**
+1. Go to the Webview in the app:
+    - Open the app
+    - login in with the standard user
+    - go to the menu
+    - enter a https url and submit the url
+2. Open chrome, type `chrome://inspect/` and click on `inspect`
+
+You are now able to inspect the webview of the page, find elements, adjust stuff and so on.
+
+**Extra challenge:<br>**
+The extra challenge is to create a test case that does the following:
+- Open the app
+- Log in and go to the menu
+- Open the Webview screen and go a secure `https` website
+- Switch the the Webview context (You can find more info here [getContexts](https://webdriver.io/docs/api/mjsonwp.html#getcontexts) and [switchContext](https://webdriver.io/docs/api/mjsonwp.html#switchcontext))
+- Verify that an element is there
+
+> Hint: You will be facing an issue that the ChromeDriver is not valid. See more info about how to solve that in the provided link in the log, of check [this](https://github.com/webdriverio/appium-boilerplate/blob/master/docs/FAQ.md#i-get-the-error-no-chromedriver-found-that-can-automate-chrome-)
+
+
