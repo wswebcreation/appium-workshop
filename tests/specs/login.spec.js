@@ -1,5 +1,5 @@
 import LoginScreen from '../screen-objects/login';
-import InventoryListScreen from '../screen-objects/inventoryList';
+import SwagListScreen from '../screen-objects/swagList';
 import { restartApp } from '../helpers/utils';
 import { LOGIN_USERS } from '../helpers/e2eConstants';
 
@@ -20,9 +20,9 @@ describe('Login', () => {
 
   it('should be able to login with a standard user', () => {
     LoginScreen.signIn(LOGIN_USERS.STANDARD);
-    InventoryListScreen.waitForIsShown();
+    SwagListScreen.waitForIsShown();
 
-    expect(InventoryListScreen.isShown()).toEqual(true, 'Inventory List screen was not shown');
+    expect(SwagListScreen.isShown()).toEqual(true, 'Swag List screen was not shown');
   });
 
   /**
