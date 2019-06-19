@@ -1,4 +1,5 @@
 import Base from './base';
+import { getTextOfElement } from '../helpers/utils'
 
 class SwagListScreen extends Base {
   constructor() {
@@ -11,7 +12,7 @@ class SwagListScreen extends Base {
      * Find the accessibility id of the cart
      * the ~ is telling WebdriverIO that you are going to use the accessibility id's
      */
-    return $('~');
+    return $('~test-Cart');
   }
 
   /**
@@ -28,7 +29,7 @@ class SwagListScreen extends Base {
      * Assignment 2.1.b:
      * Get the text of the cart element and return it
      */
-    return 'the text of the cart';
+    return getTextOfElement(this.cart);
   }
 
   /**
@@ -45,7 +46,7 @@ class SwagListScreen extends Base {
      *
      * HINT: Try to come up with a XPATH selector that returns the `Add to cart` button and uses the text of the swag item to find it
      */
-    const xpathSelector = 'your-xpath-selector';
+    const xpathSelector = "//*[@content-desc='test-ADD TO CART'][../android.widget.TextView[contains(@text,'Sauce Labs Bike Light')]]";
 
     return $(xpathSelector).click();
   }

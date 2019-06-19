@@ -34,12 +34,12 @@ describe('Swag Item Overview', () => {
   it('should be able to add the "Sauce Labs Bike Light" to the cart', () => {
     // 1. Validate that the cart holds no products
     //    TIP: use something like `expect(pageObject.method).not.toContain('1');
-
+    expect(SwagListScreen.getCartAmount()).not.toContain('1');
 
     // 2. Add the "Sauce Labs Bike Light" to the cart
-
+    SwagListScreen.addSauceLabsBikeLight();
 
     // 3. Validate that the cart holds 1 product
-
+    expect(SwagListScreen.getCartAmount()).toContain('1');
   });
 });
