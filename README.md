@@ -91,8 +91,21 @@ I've created a simple test case to check if everything works on your machine. Yo
 
 ### Exercises
 In our previous step we already checked if the setup worked and we already ran our first test.
-The master branch already holds the first exercise, which can be found [here](./docs/exercises/EXERCISE-1.md).
+The master branch already holds the first exercise, which can be found [here](./docs/exercises/).
 
 All other exercises can be found in branches called `exercise-#`, the `#` is the number of the exercise. Check the note at the beginning of this document!
 
 The goal of each exercise and the steps you need to take can be found in the exercise documents.
+
+
+#### Check out a branch
+Check out the branch `exercise-#`(`#` is the number `2` or `3`) with:
+
+  `git checkout exercise-#`
+
+> *or go to GitHub and select branch [`exercise-2`](https://github.com/wswebcreation/appium-workshop/tree/exercise-2) or [`exercise-3`](https://github.com/wswebcreation/appium-workshop/tree/exercise-3)*
+
+You will find:
+- answers for the previous exercise 
+- the new exercises
+
