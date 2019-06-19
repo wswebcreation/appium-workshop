@@ -21,7 +21,7 @@ At the end of this exercise you are able:
 }
 ```
 
-- Open a coding editor and open [`tests/specs/login.spec.js`](./tests/specs/login.spec.js). There you will find the steps about what you need to do
+- Open a coding editor and open [`tests/specs/login.spec.js`](../../tests/specs/login.spec.js). There you will find the steps about what you need to do
 - After following all the steps and adding all missing code you can run the tests with 
 
   `npm run test.android`
