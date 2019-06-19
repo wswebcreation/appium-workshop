@@ -7,19 +7,19 @@ At the end of this exercise you:
 - are able to verify that the swag was added to the cart
 
 ## What to do
-- Open Appium-Desktop with the following configuration you created in exercise 1
+- Open Appium-Desktop with the configuration you created in exercise 1
 - Use the default credentials to log in.
 - Look at the cart icon, check what happens with the code when you:
   1. add an item (refresh the UI-Hierarchy after adding an item)
   2. remove an item (refresh the UI-Hierarchy after adding an item)
 - Look at the second swag item and try to find:
-  1. the text element for the first swag item
-  2. the add button for the first swag item
+  1. the text element for the second swag item
+  2. the add button for the second swag item
 - Open a coding editor and open [`tests/specs/swag.list.spec.js`](../../tests/specs/swag.list.spec.js) for what to do.
 
-> HINT: Try to come up with a XPATH selector that uses the text of the second swag item and returns the `Add to cart` button
+> HINT: Try to come up with a XPATH selector that returns the `Add to cart` button and uses the text of the swag item to find it
 
-- After following all the steps and adding all missing code you can run the tests with 
+- After following all the steps and adding all missing code you can run the tests with (the `-- --spec=` will only run a specific test file, if you remove  it will  run all test files) 
 
   `npm run test.android -- --spec=tests/specs/swag.list.spec.js`
   
