@@ -15,6 +15,9 @@ A Webview can also be accessed in a hybrid app and we can use *Selenium*-selecto
 
 ## What to do
 - Open Appium-Desktop with the configuration you created in exercise 1
+
+  > **NOTE:**<br> Be aware of the port, it needs to be `4774`
+
 - Use the default credentials to log in.
 - Go to the Webview in the app by doing the following:
     - go to the `menu > WEBVIEW`

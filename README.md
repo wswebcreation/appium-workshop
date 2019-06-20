@@ -109,3 +109,8 @@ You will find:
 - answers for the previous exercise 
 - the new exercises
 
+The answers of exercise-3 can be found in the branch called `answers-exercise-3`, use 
+
+  `git checkout answers-exercise-3`
+  
+to see them. 
