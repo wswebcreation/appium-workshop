@@ -28,7 +28,7 @@ class Webview extends Base {
      * Assignment 3.1.a:
      * Find the selector open the menu
      */
-    return $('your-css-selector');
+    return $('.navbar-toggle');
   }
 
   get menu(){
@@ -36,7 +36,7 @@ class Webview extends Base {
      * Assignment 3.1.b:
      * Find the selector of the menu
      */
-    return $('your-css-selector');
+    return $('.collapse.navbar-collapse');
   }
 
   /**

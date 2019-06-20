@@ -59,21 +59,21 @@ describe('Webview', () => {
     //    - First find it and add it to the Webview screen object
     //    - Use this method from WebdriverIO to wait for it to be displayed
     //      https://webdriver.io/docs/api/element/isDisplayed.html
-
+    expect(Webview.menu.isDisplayed()).toEqual(false);
 
     // 2. Validate that menu button in the webview is shown
     //    - First find it and add it to the Webview screen object
     //    - Use this method from WebdriverIO to wait for it to be displayed
     //      https://webdriver.io/docs/api/element/waitForDisplayed.html
-
+    Webview.menuButton.waitForDisplayed(15000);
 
     // 3. Open the menu
-
+    Webview.menuButton.click();
 
     // 4. Validate that the menu is open
     //    TIP: use something like this method https://webdriver.io/docs/api/element/isDisplayed.html
     //         to verify that the button is not there anymore
-
+    expect(Webview.menu.isDisplayed()).toEqual(true);
 
     /**
      * EXTRA!!
@@ -84,12 +84,14 @@ describe('Webview', () => {
      * log out from the app in the same session.
      */
     // Remember that you are in the Webview context, so you need to switch
-
+    Webview.switchToContext(CONTEXT_REF.NATIVE);
 
     // Open the menu and select LOGOUT
-
+    Menu.open();
+    Menu.clickOnLogout();
 
     // Verify that you are logged out
-
+    LoginScreen.waitForIsShown();
+    expect(LoginScreen.isShown()).toEqual(true);
   });
 });
