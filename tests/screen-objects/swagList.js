@@ -20,7 +20,7 @@ class SwagListScreen extends Base {
    *
    * @return {string}
    */
-  getCartAmount(){
+  getCartAmount() {
     // Dirty little hack =).
     // There is a little delay in adding / removing data from the cart
     browser.pause(100);
@@ -39,14 +39,16 @@ class SwagListScreen extends Base {
    *
    * @return {void}
    */
-  addSauceLabsBikeLight(){
+  addSauceLabsBikeLight() {
     /**
      * Assignment 2.2:
      * Add the "Sauce Labs Bike Light" to the cart
      *
      * HINT: Try to come up with a XPATH selector that returns the `Add to cart` button and uses the text of the swag item to find it
      */
-    const xpathSelector = "//*[@content-desc='test-ADD TO CART'][../android.widget.TextView[contains(@text,'Sauce Labs Bike Light')]]";
+    const xpathSelector = browser.isAndroid
+      ? '//android.widget.TextView[contains(@text,"Sauce Labs Bike Light")]//ancestor::*[@content-desc="test-Item"]//*[@content-desc="test-ADD TO CART"]'
+      : '//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]//*[@name="test-ADD TO CART"]';
 
     return $(xpathSelector).click();
   }
