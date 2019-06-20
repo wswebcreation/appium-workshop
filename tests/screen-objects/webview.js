@@ -10,13 +10,18 @@ const DOCUMENT_READY_STATE = {
   LOADING: 'loading',
 };
 
+// We are using a different selector here to make sure this will also
+// work for iOS. The reason for this is that `~test-WEBVIEW` will only return
+// 1 element on Android, and 2 for iOS.
+const inputSelector = '~test-enter a https url here...';
+
 class Webview extends Base {
   constructor() {
-    super('~test-WEBVIEW');
+    super(inputSelector);
   }
 
   get input() {
-    return $('~test-enter a https url here...');
+    return $(inputSelector);
   }
 
   get go() {
