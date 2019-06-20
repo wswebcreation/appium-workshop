@@ -8,6 +8,9 @@ At the end of this exercise you:
 
 ## What to do
 - Open Appium-Desktop with the configuration you created in exercise 1
+
+  > **NOTE:**<br> Be aware of the port, it needs to be `4774`
+
 - Use the default credentials to log in.
 - Look at the cart icon, check what happens with the code when you:
   1. add an item (refresh the UI-Hierarchy after adding an item)
