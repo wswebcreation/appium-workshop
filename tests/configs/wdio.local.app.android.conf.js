@@ -24,10 +24,4 @@ config.capabilities = [
     },
 ];
 
-// ======
-// Appium
-// ======
-// Tell Appium which port to use
-config.port = 4723;
-
 exports.config = config;
