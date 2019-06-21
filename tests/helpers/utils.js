@@ -10,7 +10,6 @@ export function restartApp() {
   browser.firstAppStart = false;
 }
 
-
 /**
  * Get the text of an element (including all child elements)
  *
@@ -24,13 +23,18 @@ export function getTextOfElement(element, isXpath = false) {
 
   try {
     if (browser.isAndroid) {
-      visualText = element.$$('*//android.widget.TextView').reduce((currentValue, el) => `${ currentValue } ${ el.getText() }`, '');
+      visualText = element.$$('*//android.widget.TextView').reduce(
+        (currentValue, el) => `${ currentValue } ${ el.getText() }`,
+        '',
+      );
     } else {
-      const iosElement = isXpath ? element.$$('*//XCUIElementTypeStaticText') : element;
       if (isXpath) {
-        visualText = element.$$('*//XCUIElementTypeStaticText').reduce((currentValue, el) => `${ currentValue } ${ el.getText() }`, '');
+        visualText = element.$$('*//XCUIElementTypeStaticText').reduce(
+          (currentValue, el) => `${ currentValue } ${ el.getText() }`,
+          '',
+        );
       } else {
-        visualText = iosElement.getText();
+        visualText = element.getText();
       }
     }
   } catch (e) {
@@ -38,34 +42,4 @@ export function getTextOfElement(element, isXpath = false) {
   }
 
   return visualText.trim();
-}
-
-/**
- * Hide the keyboard, but only if it is present
- *
- * @param {Element} element
- *
- * @return {void}
- */
-export function hideKeyboard(element) {
-  // The hideKeyboard is not working on ios devices, so take a different approach
-  if (!browser.isKeyboardShown()){
-    return;
-  }
-
-  if (browser.isIOS) {
-    return browser.touchAction({
-      action: 'tap',
-      x: 0,
-      y: -40,
-      element,
-    });
-  }
-
-  try {
-    return browser.hideKeyboard('pressKey', 'Done');
-  } catch (e) {
-    // Fallback
-    return browser.back();
-  }
 }

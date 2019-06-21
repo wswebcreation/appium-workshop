@@ -27,7 +27,7 @@ describe('Login', () => {
 
   /**
    * Assignment 1:
-   * 1. Check the Login Page Object, we need to find the selector for the error message,
+   * 1. Check the Login Screen Object, we need to find the selector for the error message,
    *    see `../screen-objects/login`
    * 2. validate that:
    *    - the error message is not shown
