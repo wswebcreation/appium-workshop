@@ -21,25 +21,3 @@ export const LOGIN_USERS = {
     password: 'secret_sauce',
   },
 };
-export const PERSONAL_INFO = {
-  STANDARD:{
-    firstName: 'Sauce',
-    lastName: 'Bot',
-    zip: '94105',
-  },
-  NO_FIRSTNAME:{
-    firstName: '',
-    lastName: 'Bot',
-    zip: '94105',
-  },
-  NO_LAST_NAME:{
-    firstName: 'Sauce',
-    lastName: '',
-    zip: '94105',
-  },
-  NO_POSTAL_CODE:{
-    firstName: 'Sauce',
-    lastName: 'Bot',
-    zip: '',
-  },
-};
