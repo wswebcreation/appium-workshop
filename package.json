@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test.android": "wdio tests/configs/wdio.local.app.android.conf.js",
+    "test.rdc.android": "wdio tests/configs/wdio.rdc.android.conf.js",
     "test.ios": "wdio tests/configs/wdio.local.app.ios.conf.js"
   },
   "repository": {
