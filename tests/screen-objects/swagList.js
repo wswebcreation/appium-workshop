@@ -50,6 +50,9 @@ class SwagListScreen extends Base {
       ? '//android.widget.TextView[contains(@text,"Sauce Labs Bike Light")]//ancestor::*[@content-desc="test-Item"]//*[@content-desc="test-ADD TO CART"]'
       : '//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]//*[@name="test-ADD TO CART"]';
 
+    // This one is even  much faster, this is the iOS Class Chain
+    // **/XCUIElementTypeOther[`name="test-Item"`]/**/XCUIElementTypeOther[`name CONTAINS "Sauce Labs Bike Light" AND name CONTAINS "ADD TO CART"`]/**/XCUIElementTypeOther[`name == "test-ADD TO CART"`]
+
     return $(xpathSelector).click();
   }
 }
